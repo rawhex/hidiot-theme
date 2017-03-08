@@ -1,0 +1,36 @@
+<div class="nicdark_section nicdark_navigation {% if page.url == "/" %}fade-down{% endif %}">
+    <div class="nicdark_menu_boxed">
+        <div class="nicdark_space3 nicdark_bg_gradient"></div>
+
+        <div class="nicdark_section nicdark_bg_grey nicdark_shadow nicdark_radius_bottom">
+            <div class="nicdark_container nicdark_clearfix">
+
+                <div class="grid grid_12 percentage">
+
+                        <div class="nicdark_space20"></div>
+
+                        <div class="nicdark_logo nicdark_marginleft10">
+                            <a href="{{ "/" | relative_url }}"><img alt="" src="{{ "/assets/img/logo.png" | relative_url }}"></a>
+                        </div>
+
+                        <nav>
+                            <ul class="nicdark_menu nicdark_margin010 nicdark_padding50">
+                                {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+                                {% for p in navigation_pages %}
+                                    {% if p.navigation_weight %}
+                                        <li>
+                                            <a href="{% if p.navigation_url %}{{ p.navigation_url }}{% else %} {{ p.url | relative_url }}{% endif %}" {% if p.url == page.url %}class="active"{% endif %}>
+                                                {{ p.title | escape }}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </nav>
+
+                        <div class="nicdark_space20"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

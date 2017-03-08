@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-event" {% if page.image %}style="background-image: url('{{ page.image | relative_url }}'); background-size: cover; background-position: center center;"{% endif %}>
+    <div class="nicdark_filter greydark">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="blackoutlined subtitle">{{ page.title | escape }}</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle blackoutlined">{{ page.subtitle | escape }}</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="grid grid_8">
+            <div class="grid grid_8 nicdark_shadow nicdark_radius">
+                <div class="grid grid_6 percentage">
+                    <div class="nicdark_margin10 nicdark_relative">
+                        <a href="#" class="nicdark_btn_icon nicdark_bg_green nicdark_shadow extrabig nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-location-outline"></i></a>
+
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <div class="nicdark_space30"></div>
+                            <h4>{{ page.location }}</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid_6 percentage">
+                    <div class="nicdark_margin10 nicdark_relative">
+                        <a href="#" class="nicdark_btn_icon nicdark_bg_red extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-wristwatch"></i></a>
+
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <div class="nicdark_space20"></div>
+                            <h4>{{ page.date | date: "%b %-d, %Y" }}</h4>
+                            <div class="nicdark_space10"></div>
+                            <p>
+                                {% if page.time_start %}{{ page.time_start | escape }}{% endif %}
+                                {% if page.time_start and page.time_end %} to {% endif %}
+                                {% if page.time_end %}{{ page.time_end | escape }}{% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nicdark_space30"></div>
+
+            {{ content }}
+
+            {% if site.disqus.shortname %}
+                {% include disqus_comments.html %}
+            {% endif %}
+        </div>
+        <div class="grid grid_4">
+            {% include sidebar.html %}
+        </div>
+        <div class="nicdark_space40"></div>
+    </div>
+</section>
+
+{% if page.map_url %}
+<section class="nicdark_section">
+    <div class="nicdark_textevidence">
+        <iframe class="nicdark_iframe nicdark_margintop40_negative nicdark_marginbottom90_negative" src="{{ page.map_url }}" height="400" ></iframe>
+    </div>
+</section>
+{% endif %}

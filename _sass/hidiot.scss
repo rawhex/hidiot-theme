@@ -1,0 +1,21 @@
+@import
+    "hidiot/_nicdark_style.scss",
+    "hidiot/_nicdark_responsive.scss",
+    "hidiot/_nicdark_widgets.scss"
+;
+
+p {
+    margin-bottom: 0.5em;
+}
+
+ul, li {
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(164, 164, 164);
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+.blog_masthead { background: url(/assets/images/blog/masthead.jpg) 50% 0 fixed; background-size:cover; }
+
+p.blackoutlined,h1.blackoutlined,h2.blackoutlined,h3.blackoutlined,h4.blackoutlined,h5.blackoutlined,h6.blackoutlined,a.blackoutlined,i.blackoutlined,span.blackoutlined, input[type="text"].blackoutlined, textarea.blackoutlined, input[type="submit"].blackoutlined, select.blackoutlined{ color:#ffffff; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }

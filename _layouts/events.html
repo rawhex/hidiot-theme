@@ -1,0 +1,92 @@
+---
+layout: default
+---
+{% if page.masthead_image or page.masthead_text or page.masthead_subtext %}
+<section id="nicdark_parallax_countdown" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-events" {% if page.masthead_image %}style="background-image: url('{{ page.masthead_image | relative_url }}');"{% endif %}>
+<a {% if page.masthead_url %}href="{{ page.masthead_url | relative_url }}"{% endif %}>
+    <div class="nicdark_filter greydark">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space40"></div>
+            <div class="nicdark_space50"></div>
+            <div class="nicdark_space100"></div>
+            <div class="grid grid_12">
+                <h1 class="blackoutlined center subtitle">{{ page.masthead_text }}</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle center blackoutlined">{{ page.masthead_subtext }}</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider center big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space20"></div>
+            </div>
+
+            <div class="nicdark_countdown"></div>
+            <div class="nicdark_space40"></div>
+            <div class="nicdark_space50"></div>
+        </div>
+    </div>
+    </a>
+</section>
+{% endif %}
+
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space50"></div>
+        <div class="grid grid_12">
+            <h1 class="subtitle greydark">UPCOMING EVENTS</h1>
+            <div class="nicdark_space20"></div>
+            <h3 class="subtitle grey">COME PLAY WITH HIDIOT AT THESE EVENTS</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left big"><span class="nicdark_bg_green nicdark_radius"></span></div>
+            <div class="nicdark_space10"></div>
+        </div>
+
+        {% for post in paginator.posts %}
+        <div class="grid grid_3">
+            <div class="nicdark_archive1 nicdark_bg_{% if post.color %}{{ post.color }}{% else %}green{% endif %} nicdark_radius nicdark_shadow">
+                <a href="#" class="nicdark_btn nicdark_bg_greydark white medium nicdark_radius nicdark_absolute_left">{{ post.date | date: "%-d" }}<br/><small>{{ post.date | date: "%b" }}</small></a>
+
+                <div style="height: 10em; background-image: url('{{ post.image | relative_url }}'); background-size: cover; background-position: center center;"></div>
+
+                <div class="nicdark_textevidence nicdark_bg_greydark">
+                    <h4 class="white nicdark_margin20">{{ post.title | escape }}</h4>
+                </div>
+
+                <div class="nicdark_margin20">
+                    <h5 class="white"><i class="icon-pin-outline"></i> {{ post.location | escape }}</h5>
+                    <div class="nicdark_space10"></div>
+                    <h5 class="white">
+                        <i class="icon-clock-1"></i>
+                        {% if post.time_start %}{{ post.time_start | escape }}{% endif %}
+                        {% if post.time_start and post.time_end %} to {% endif %}
+                        {% if post.time_end %}{{ post.time_end | escape }}{% endif %}
+                    </h5>
+                    <div class="nicdark_space10"></div>
+                    <h5 class="white"><i class="icon-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</h5>
+                    <div class="nicdark_space20"></div>
+                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                    <div class="nicdark_space20"></div>
+                    <p class="white">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 200 | escape }}</p>
+                    <div class="nicdark_space20"></div>
+                    <a href="{{ post.url | relative_url }}" class="nicdark_press nicdark_btn nicdark_bg_{% if post.color %}{{ post.color }}{% else %}green{% endif %}dark white nicdark_radius nicdark_shadow medium">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+   </div>
+</section>
+
+<div class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space40"></div>
+        <div class="grid grid_6 nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
+            {% if paginator.previous_page %}
+                <a class="nicdark_disable_floatright_iphoneland nicdark_disable_floatright_iphonepotr nicdark_btn nicdark_bg_green medium right nicdark_shadow nicdark_radius white nicdark_press" href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="icon-left-open-outline"></i>&nbsp;&nbsp;&nbsp;PREV</a>
+            {% endif %}
+        </div>
+        <div class="grid grid_6 nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
+            {% if paginator.next_page %}
+                <a class=" nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press" href="{{ paginator.next_page_path | prepend: site.baseurl }}">NEXT&nbsp;&nbsp;&nbsp;<i class="icon-right-open-outline"></i></a>
+            {% endif %}
+        </div>
+        <div class="nicdark_space50"></div>
+    </div>
+</div>

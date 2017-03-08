@@ -1,0 +1,47 @@
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="{{ "/assets/js/moment.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/countdown.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/parallax.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/isotope.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/countto.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/inview.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/nicescroll.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/scrollto.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/superfish.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/tinynav.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/magnific.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/settings.js" | relative_url }}"></script>
+
+{% if page.masthead_countdown %}
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        //START PARALLAX SECTIONS
+        $('#nicdark_parallax_countdown').parallax("50%", 0.3);
+        //END PARALLAX SECTIONS
+
+
+        //START COUNTDOWN GRID SECTION
+        //variables
+        var endDate = moment("{{ page.masthead_countdown }}", 'YYYY-MM-DD HH:mm:ss').toDate()
+        var grid = "grid_3";
+        //insert the class nicdark_displaynone in the var if you wnat to hide the visualization
+        var display_years = "nicdark_displaynone";
+        var display_days = "";
+        var display_hours = "";
+        var display_minutes = "";
+        var display_seconds = "";
+        //call
+        $(".nicdark_countdown").countdown({
+          date: endDate,
+          render: function(data) {
+            var color = "{% if page.masthead_countdown_color %}{{ page.masthead_countdown_color }}{% else %}white{% endif %}";
+            $(this.el).html("<div class=\"grid "+ grid +" "+ display_years +" \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle " + color + " extrasize\">"+ this.leadingZeros(data.years, 4) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white\">YEARS</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_days +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle " + color + " extrasize\">"+ this.leadingZeros(data.days, 1) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white\">DAYS</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_hours +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle " + color + " extrasize\">"+ this.leadingZeros(data.hours, 2) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_yellow small nicdark_shadow nicdark_radius white\">HOURS</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_minutes +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle " + color + " extrasize\">"+ this.leadingZeros(data.min, 2) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white\">MINUTES</a><div class=\"nicdark_space5\"></div></div></div><div class=\"grid "+ grid +" "+ display_seconds +"  \"><div class=\"nicdark_textevidence center\"><h1 class=\"subtitle " + color + " extrasize\">"+ this.leadingZeros(data.sec, 2) +"</h1><div class=\"nicdark_space20\"></div><a class=\"nicdark_btn nicdark_bg_violet small nicdark_shadow nicdark_radius white\">SECONDS</a><div class=\"nicdark_space5\"></div></div></div>");
+          }
+        });
+        //END COUNTDOWN GRID SECTION
+
+    });
+</script>
+{% endif %}

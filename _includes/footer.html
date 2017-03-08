@@ -1,0 +1,105 @@
+<div class="nicdark_space3 nicdark_bg_gradient"></div>
+
+<section class="nicdark_section nicdark_bg_greydark">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space30"></div>
+        <div class="grid grid_4 nomargin percentage">
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_margin10">
+                <h4 class="white">{{ site.title | escape }}</h4>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space20"></div>
+                <p class="white">{{ site.description | escape }}</p>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space20"></div>
+                {% if site.email %}
+                <a href="mailto:{{ site.email }}" class="nicdark_btn_icon nicdark_bg_orange small nicdark_shadow nicdark_radius white"><i class="icon-mail-1 nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                {% if site.url %}
+                <a href="/" class="nicdark_btn_icon nicdark_bg_yellow small nicdark_shadow nicdark_radius white"><i class="icon-home nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                {% if site.telephone %}
+                <a href="tel://{{ site.telephone }}" class="nicdark_btn_icon nicdark_bg_red small nicdark_shadow nicdark_radius white"><i class="icon-phone-outline nicdark_rotate"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+            </div>
+        </div>
+
+
+        <div class="grid grid_4 nomargin percentage nicdark_dark_widgets">
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_margin10">
+                <h4 class="white">Recent Posts</h4>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space20"></div>
+                <div class="widget widget_recent_entries">
+                    <ul>
+                        {% for post in site.posts limit: 4 %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid_4 nomargin percentage nicdark_dark_widgets">
+          <div class="nicdark_space20"></div>
+          <div class="nicdark_margin10">
+            <h4 class="white">Join The Conversation</h4>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+            <div class="widget widget_recent_entries">
+              <ul>
+                <li><a href="{{ site.reddit_url }}">/r/hidiot</a></li>
+                <li><a href="{{ site.twitter_url }}">@rawhex</a></li>
+                <li><a href="{{ site.facebook_url }}">RawHex on Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="grid grid_3 nomargin percentage">
+        </div> -->
+
+        <div class="nicdark_space50"></div>
+    </div>
+</section>
+
+<div class="nicdark_section nicdark_bg_greydark2 nicdark_copyrightlogo">
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="grid grid_6 nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
+            <div class="nicdark_space20"></div>
+            {% assign thisYear = site.time | date: '%Y' | to_integer %}
+            {% assign copyrightYear = site.copyright_year | to_integer %}
+            <p class="white">&copy; {% if thisYear == copyrightYear %}{{ site.copyright_year }}{% else %}{{ site.copyright_year }}-{{ site.time | date: '%Y' }}{% endif %} <a href="{{ site.copyright_url }}">{{ site.copyright_company }}</a> {{ site.copyright_slug }} - Made With <i class="icon-heart-filled red nicdark_zoom"></i> In {{ site.copyright_country }}</p>
+        </div>
+
+
+        <div class="grid grid_6">
+            <div class="nicdark_focus right nicdark_aligncenter_iphoneland nicdark_aligncenter_iphonepotr">
+                <!-- {% if site.facebook_url %}
+                <div class="nicdark_margin10">
+                    <a href="{{ site.facebook_url }}" class="nicdark_facebook nicdark_press right nicdark_btn_icon small nicdark_radius white"><i class="icon-facebook-1"></i></a>
+                </div>
+                {% endif %}
+                {% if site.gplus_url %}
+                <div class="nicdark_margin10">
+                    <a href="{{ site.gplus_url }}" class="nicdark_press right nicdark_btn_icon nicdark_bg_red nicdark_shadow small nicdark_radius white"><i class="icon-gplus"></i></a>
+                </div>
+                {% endif %}
+                {% if site.twitter_url %}
+                <div class="nicdark_margin10">
+                    <a href="{{ site.twitter_url }}" class="nicdark_press right nicdark_btn_icon nicdark_bg_blue nicdark_shadow small nicdark_radius white"><i class="icon-twitter-1"></i></a>
+                </div>
+                {% endif %} -->
+                <div class="nicdark_margin10">
+                    <a href="#top" class="nicdark_zoom nicdark_internal_link right nicdark_btn_icon nicdark_bg_greydark2 small nicdark_radius white"><i class="icon-up-outline"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

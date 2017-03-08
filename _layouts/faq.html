@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" {% if page.image %}style="background-image: url('{{ page.image | relative_url }}'); background-size: cover; background-position: center center;"{% endif %}>
+    <div class="nicdark_filter greydark">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="blackoutlined subtitler center">{{ page.masthead_text }}</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle blackoutlined center">{{ page.masthead_subtext }}</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider center big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space50"></div>
+        <div class="grid grid_8">
+            <p>{{ content }}</p>
+
+            <div class="nicdark_space50"></div>
+
+            <h3 class="subtitle greydark">MOST FREQUENT QUESTIONS</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_blue nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+
+            {% assign sorted = (site.faq | sort: 'date') %}
+            {% for post in sorted %}
+            <div class="nicdark_toogle">
+                <h5 class="nicdark_toogle_header grey nicdark_textevidence nicdark_bg_grey big nicdark_radius nicdark_shadow">
+                    {{ post.title }}
+                    <i class="icon-info-outline nicdark_iconbg right medium grey"></i>
+                </h5>
+                <div class="nicdark_toogle_content nicdark_bg_grey nicdark_radius_bottom nicdark_shadow">
+                    <p>{{ post.content }}</p>
+                </div>
+            </div>
+            <div class="nicdark_space20"></div>
+            {% endfor %}
+        </div>
+
+        <div class="grid grid_4">
+            {% include sidebar.html %}
+        </div>
+
+        <div class="nicdark_space50"></div>
+    </div>
+</section>

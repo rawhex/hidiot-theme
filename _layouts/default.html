@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="{{ page.lang | default: site.lang | default: "en" }}"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="{{ page.lang | default: site.lang | default: "en" }}"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="{{ page.lang | default: site.lang | default: "en" }}"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="{{ page.lang | default: site.lang | default: "en" }}"> <!--<![endif]-->
+{% include head.html %}
+<body id="top">
+    <div class="nicdark_site">
+        <div class="nicdark_site_fullwidth nicdark_clearfix">
+            <div class="nicdark_overlay"></div>
+
+            {% include header.html %}
+
+            {{ content }}
+
+            {% include footer.html %}
+
+        </div>
+    </div>
+
+    {% include scripts.html %}
+</body>
+</html>
