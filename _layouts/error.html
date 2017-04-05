@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space100"></div>
+        <div class="grid grid_8">
+            <div class="nicdark_space50"></div>
+
+            <h1 class="subtitle greydark">{{ page.title }}</h1>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+
+            <div class="nicdark_space20"></div>
+
+            {{ content }}
+
+            <div class="nicdark_space50"></div>
+        </div>
+
+
+        <div class="grid grid_4">
+            {% include sidebar.html %}
+        </div>
+        <div class="nicdark_space50"></div>
+    </div>
+</section>
