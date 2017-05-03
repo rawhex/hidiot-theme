@@ -25,7 +25,18 @@ layout: default
 </div>
 
 <section class="nicdark_section">
-    <div style="background-image: url('{{ page.masthead_image | relative_url }}'); background-size: cover; background-position: center center; min-height: 30em; min-height: 60vh;"></div>
+  <div style="background-image: url('{{ page.masthead_image | relative_url }}'); background-size: cover; background-position: center center; min-height: 30em; min-height: 60vh;">
+    <div class="nicdark_container nicdark_clearfix">
+      <div class="nicdark_space100"></div>
+      <div class="nicdark_space50"></div>
+      <div class="nicdark_space40"></div>
+      <div class="grid grid_12">
+        <h1 class="subtitle center blackoutlined"><a target="_blank" class="nicdark_btn nicdark_press nicdark_bg_red white big nicdark_radius nicdark_shadow" href="{{ page.newsletter_link}}"><strong class="newsletter_btn">{{ page.newsletter_message }}</strong></a></h1>
+      </div>
+      <div class="nicdark_space40"></div>
+      <div class="nicdark_space50"></div>
+    </div>
+  </div>
 </section>
 
 <section class="nicdark_section nicdark_margintop45_negative">
@@ -75,12 +86,12 @@ layout: default
         <div class="nicdark_container nicdark_clearfix">
             <div class="nicdark_space40"></div>
             <div class="grid grid_12">
-                <h1 class="center subtitle"><a class="red" href="{{ page.kickstarter_link }}"><strong>{{ page.kickstarter_message }}</strong></a></h1>
-                <div class="nicdark_space20"></div>
-                <h1 class="center subtitle">{{ page.masthead_countdown_title }}</h1>
-                <div class="nicdark_space20"></div>
-                <div class="nicdark_divider center big"><span class="nicdark_bg_grey nicdark_radius"></span></div>
-                <div class="nicdark_space20"></div>
+              <h1 class="subtitle center"><a class="red" target="_blank" href="{{ page.kickstarter_link }}"><strong>{{ page.kickstarter_message }}</strong></a></h1>
+              <div class="nicdark_space20"></div>
+              <h1 class="center subtitle">{{ page.masthead_countdown_title }}</h1>
+              <div class="nicdark_space20"></div>
+              <div class="nicdark_divider center big"><span class="nicdark_bg_grey nicdark_radius"></span></div>
+              <div class="nicdark_space20"></div>
             </div>
             <div class="nicdark_countdown grey"></div>
             <div class="nicdark_space40"></div>
