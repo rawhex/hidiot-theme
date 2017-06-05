@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "hidiot-theme"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Aidan Mitchell"]
-  spec.email         = ["aidan@rawhex.com"]
+  spec.email         = ["aidan@hidiot.com"]
 
-  spec.summary       = "theme for hidiot.com"
+  spec.summary       = "Jekyll Theme for hidiot.com"
   spec.homepage      = "https://hidiot.com"
-  spec.license       = ""
+  spec.license       = "MIT License"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass)}i) }
 
