@@ -25,20 +25,14 @@ layout: default
 </div>
 
 <section class="nicdark_section">
-  <div style="background-image: url('{{ page.masthead_image | relative_url }}'); background-size: cover; background-position: center center; min-height: 30em; min-height: 60vh;">
+  <div style="background-image: url('{{ page.masthead_image | relative_url }}'); background-size: cover; background-position: center center; min-height: 20em; min-height: 40vh;">
     <div class="nicdark_container nicdark_clearfix">
       <div class="nicdark_space100"></div>
-      <div class="nicdark_space50"></div>
-      <div class="nicdark_space40"></div>
-      <div class="grid grid_12">
-        <h1 class="subtitle center blackoutlined"><a target="_blank" class="nicdark_btn nicdark_press nicdark_bg_red white big nicdark_radius nicdark_shadow" href="{{ page.newsletter_link}}"><strong class="newsletter_btn">{{ page.newsletter_message }}</strong></a></h1>
-      </div>
-      <div class="nicdark_space40"></div>
-      <div class="nicdark_space50"></div>
     </div>
   </div>
 </section>
 
+{% if site.display_events %}
 <section class="nicdark_section nicdark_margintop45_negative">
     <div class="nicdark_container nicdark_clearfix">
 		<div class="grid grid_12 percentage nomargin">
@@ -80,26 +74,55 @@ layout: default
 		</div>
 	</div>
 </section>
+{% else %}
+<section class="nicdark_section nicdark_margintop45_negative">
+    <div class="nicdark_container nicdark_clearfix">
+		<div class="grid grid_12 percentage nomargin">
+			<div class="nicdark_textevidence center">
+			    <div class="nicdark_textevidence nicdark_width_percentage33 nicdark_bg_blue nicdark_shadow nicdark_radius_left">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30 tuck-over">
+			                <h2 class="white subtitle"><a class="white" href="{% if page.masthead_links[0].url contains "://" %}{{ page.masthead_links[0].url }}{% else %}{{ page.masthead_links[0].url | relative_url }}{% endif %}">{{ page.masthead_links[0].title }}</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-pencil-2 nicdark_iconbg left extrabig blue nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+			    <div class="nicdark_textevidence nicdark_width_percentage33 nicdark_bg_yellow nicdark_shadow">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30 tuck-over">
+			                <h2 class="white subtitle"><a class="white" href="{% if page.masthead_links[1].url contains "://" %}{{ page.masthead_links[1].url }}{% else %}{{ page.masthead_links[1].url | relative_url }}{% endif %}">{{ page.masthead_links[1].title }}</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-reddit nicdark_iconbg left extrabig yellow nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+			    <div class="nicdark_textevidence nicdark_width_percentage33 nicdark_bg_green nicdark_shadow nicdark_radius_right">
+			        <div class="nicdark_textevidence">
+			            <div class="nicdark_margin30 tuck-over">
+			                <h2 class="white subtitle"><a class="white" href="{% if page.masthead_links[3].url contains "://" %}{{ page.masthead_links[3].url }}{% else %}{{ page.masthead_links[3].url | relative_url }}{% endif %}">{{ page.masthead_links[3].title }}</a></h2>
+			           </div>
+			            <i class="nicdark_zoom icon-graduation-cap-1 nicdark_iconbg left extrabig green nicdark_displaynone_ipadland nicdark_displaynone_ipadpotr"></i>
+			        </div>
+			    </div>
+			    <div class="nicdark_space5"></div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
 
-<!-- <section id="nicdark_parallax_countdown" class="nicdark_section">
-    <div class="nicdark_filter">
-        <div class="nicdark_container nicdark_clearfix">
-            <div class="nicdark_space40"></div>
-            <div class="grid grid_12">
-              <h1 class="subtitle center"><a class="red" target="_blank" href="{{ page.kickstarter_link }}"><strong>{{ page.kickstarter_message }}</strong></a></h1>
-              <div class="nicdark_space20"></div>
-              <h1 class="center subtitle">{{ page.masthead_countdown_title }}</h1>
-              <div class="nicdark_space20"></div>
-              <div class="nicdark_divider center big"><span class="nicdark_bg_grey nicdark_radius"></span></div>
-              <div class="nicdark_space20"></div>
-            </div>
-            <div class="nicdark_countdown grey"></div>
-            <div class="nicdark_space40"></div>
-            <div class="nicdark_space50"></div>
-        </div>
+<section class="nicdark_section">
+  <div class="nicdark_container nicdark_clearfix">
+    <div class="nicdark_space50"></div>
+    <div class="grid grid_6">
+      <p class="center">{{ page.hidiot_description }}</p>
     </div>
-</section> -->
-
+    <div class="grid grid_6">
+      <h2 class="subtitle center"><a target="_blank" class="nicdark_btn nicdark_press nicdark_bg_violet white big nicdark_radius nicdark_shadow custom_btn" href="{{ page.newsletter_link}}">{{ page.newsletter_message }}</a></h3>
+      <div class="nicdark_space10"></div>
+      <h2 class="subtitle center"><a target="_blank" class="nicdark_btn nicdark_press nicdark_bg_red white big nicdark_radius nicdark_shadow custom_btn" href="{{ page.shopify_button_address}}">{{ page.shopify_button_text }}</a></h3>
+    </div>
+  </div>
+</section>
 
 <section class="nicdark_section">
     <div class="nicdark_container nicdark_clearfix">
@@ -142,6 +165,7 @@ layout: default
     </div>
 </section>
 
+{% if site.display_events %}
 <section class="nicdark_section">
     <div class="nicdark_container nicdark_clearfix">
         <div class="nicdark_space50"></div>
@@ -188,5 +212,6 @@ layout: default
         {% endfor %}
    </div>
 </section>
+{% endif %}
 
 <div class="nicdark_space50"></div>
