@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "hidiot-theme"
-  spec.version       = "0.1.5"
+  spec.version       = "0.1.6"
   spec.authors       = ["Aidan Mitchell"]
   spec.email         = ["aidan@hidiot.com"]
 
