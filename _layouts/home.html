@@ -184,10 +184,10 @@ layout: default
             {% assign sorted = (site.posts | sort: 'date') | reverse %}
             {% for post in sorted limit: 4 %}
             <div class="grid grid_3 nicdark_masonry_item educational">
-                <a href="{{ post.url | relative_url }}">
+                <a href="{{ post.canonical_link }}">
                     <div class="nicdark_archive1 nicdark_bg_{% if post.color %}{{ post.color }}{% else %}green{% endif %} nicdark_radius nicdark_shadow">
 
-                        <div style="height: 10em; background-image: url('{{ post.image | relative_url }}'); background-size: cover; background-position: center center;"></div>
+                        <div style="height: 10em; background-image: url('{{ post.image }}'); background-size: cover; background-position: center center;"></div>
 
                         <div class="nicdark_margin20">
                             <h4 class="white">{{ post.title | escape}}</h4>
